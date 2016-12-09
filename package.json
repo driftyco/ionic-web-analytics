@@ -1,0 +1,21 @@
+{
+  "name": "ionic-web-analytics",
+  "version": "0.1.0",
+  "description": "Analytics package for Ionic websites",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/driftyco/ionic-web-analytics.git"
+  },
+  "author": "Brian Dennis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/driftyco/ionic-web-analytics/issues"
+  },
+  "homepage": "https://github.com/driftyco/ionic-web-analytics#readme",
+  "dependencies": {
+    "@google-cloud/bigquery": "^0.6.0",
+    "cookie": "^0.3.1",
+    "uuid": "^3.0.1"
+  }
+}
