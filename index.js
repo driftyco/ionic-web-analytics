@@ -52,7 +52,7 @@ module.exports = function (appId, isValidRequest, opts) {
       if (!cookieString)
         return null;
 
-      return cookie.parse(cookieString)._ga;
+      return cookie.parse(cookieString)._ga || null;
     }
 
     var entry = {};
