@@ -37,7 +37,7 @@ module.exports = function (appId, isValidRequest, opts) {
     projectId: projectId,
     credentials: {
       client_email: process.env.BIGQUERY_CLIENT_EMAIL,
-      private_key: process.env.BIGQUERY_PRIVATE_KEY
+      private_key: process.env.BIGQUERY_PRIVATE_KEY.replace(/\\n/g, '\n')
     }
   });
   var dataset = project.dataset(datasetId);
