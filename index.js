@@ -47,6 +47,14 @@ module.exports = function (appId, isValidRequest, opts) {
   var buffer = [];
 
   function formatEntry (req) {
+
+    function parseCookie (cookieString) {
+      if (!cookieString)
+        return null;
+
+      return cookie.parse(cookieString)._ga;
+    }
+
     var entry = {};
 
     // set fields
@@ -68,7 +76,7 @@ module.exports = function (appId, isValidRequest, opts) {
       cacheControl: req.get('Cache-Control') || null,
       language: req.get('Accept-Language') || null,
       encoding: req.get('Accept-Encoding') || null,
-      googleAnalytics:  cookie.parse(req.get('Cookie'))._ga || null
+      googleAnalytics:  parseCookie(req.get('Cookie'))
     };
 
     entry.data = JSON.stringify(headers);
