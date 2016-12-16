@@ -37,7 +37,7 @@ Optional. An object containing various configuration options.
 
 #### config.batchSize
 
-Integer between 1 and 500. The number of requests to buffer before sending to BigQuery.
+Integer between 1 and 500. The number of requests to buffer before sending to BigQuery. Defaults to 1.
 
 #### config.dataset
 
@@ -45,7 +45,7 @@ Integer between 1 and 500. The number of requests to buffer before sending to Bi
 
 #### config.errorHandler
 
-A `function` that will be called on error and passed the corresponding BigQuery error object.
+A `function` that will be called on error and passed the corresponding BigQuery error object. Logs the error by default.
 
 #### config.projectId
 
