@@ -19,7 +19,7 @@ let analytics = WebAnalytics(appId, checkRequest, config)
 app.use(analytics)
 ```
 
-For authentication with BigQuery, ensure the `BIGQUERY_CLIENT_EMAIL` and `BIGQUERY_PRIVATE_KEY` environment variables are set. These can be pulled from the JSON keyfile generated on BigQuery for service accounts.
+For authentication with BigQuery, ensure the `BIGQUERY_CLIENT_EMAIL` and `BIGQUERY_PRIVATE_KEY` environment variables are set. These can be pulled from the JSON keyfile generated on BigQuery for service accounts. If either environment variable is missing, analytics will be disabled and the middleware will simply pass the request along.
 
 ## API
 
