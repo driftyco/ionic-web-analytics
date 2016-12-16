@@ -32,6 +32,14 @@ module.exports = function (appId, isValidRequest, opts) {
     throw new Error('errorHandler must be a function')
   }
 
+  // check for env vars
+  if (!process.env.BIGQUERY_PRIVATE_KEY || !process.env.BIGQUERY_CLIENT_EMAIL) {
+    console.warn('Warning: No BigQuery environment variables found. Disabling analytics.');
+    return function (req, res, next) {
+      next();
+    }
+  }
+
   // set up BigQuery
   var project = BigQuery({
     projectId: projectId,
